@@ -9,12 +9,34 @@
 //	*	- 사용 : 뒤의 변수의 값을 반환 ==> 가지고 있는 값
 //	&	- 사용 : 뒤의 변수의 주소 값을 반환 ==> 변수의 주소 값
 
+// 배열과 포인터 문법 확인
+void test()
+{
+	int a[4] = { 1, 2, 3, 4 };
+	int *p = a;
+	// |0|0|0|1|0|0|0|2|0|0|0|3|0|0|0|4|
+	printf("A: %d %d %d %d\n", a[0], a[1], a[2], a[3]);
+	printf("P: %d %d %d %d\n", p[0], p[1], p[2], p[3]);
+	printf("P~:%d %d %d %d\n", *(p+0), *(p+1), *(p+2), *(p+3));
+	printf("A~:%d %d %d %d\n", *(a+0), *(a + 1), *(a + 2), *(a + 3));
+}
 
 int main()
 {
+	test();
+	return 0;
+
+	char k = 65;
+	//int *p = &k;	// 자료형이 다른 주소는 받을 수 없다!
+	int *lp = (int*)&k;
+	char *pk = &k;
+	int *pi;
+	printf("1 - %d\n", *lp);
+	printf("%d %d\n", sizeof(pk), sizeof(pi));
+
 	// 변수 선언은 반드시 한줄에 하나씩만 합니다!
-	int a, b, c;	// XXXXXX
-	int a = 0;		// O
+	//int a, b, c;	// XXXXXX
+	int o = 0;		// O
 	int b = 0;		// O
 	int c = 0;		// O
 
